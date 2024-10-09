@@ -1,0 +1,25 @@
+#Crea la base de datos de productos
+CREATE DATABASE IF NOT EXISTS productos;
+
+#Crea la tabla de productos en la base de datos productos
+CREATE TABLE IF NOT EXISTS productos.producto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    img VARCHAR(250) NOT NULL,
+    categoria VARCHAR(100) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    descripcion TEXT NOT NULL
+);
+
+#Inserta datos en la tabla de productos
+INSERT INTO productos.producto (id, nombre, img, categoria, precio, descripcion) VALUES
+  (1, 'Laptop Pro', 'https://via.placeholder.com/400x300?text=Laptop+Pro', 'Electrónica', 1299.99, 'Potente laptop para profesionales'),
+  (2, 'Smartphone X', 'https://via.placeholder.com/400x300?text=Smartphone+X', 'Electrónica', 799.99, 'Último modelo con cámara avanzada'),
+  (3, 'Camiseta Casual', 'https://via.placeholder.com/400x300?text=Camiseta+Casual', 'Ropa', 29.99, 'Cómoda camiseta para el día a día'),
+  (4, 'Zapatillas Runner', 'https://via.placeholder.com/400x300?text=Zapatillas+Runner', 'Calzado', 89.99, 'Ideales para correr largas distancias'),
+  (5, 'Libro Bestseller', 'https://via.placeholder.com/400x300?text=Libro+Bestseller', 'Libros', 19.99, 'El libro más vendido del año'),
+  (6, 'Smartwatch Fit', 'https://via.placeholder.com/400x300?text=Smartwatch+Fit', 'Electrónica', 199.99, 'Monitorea tu salud y actividad'),
+  (7, 'Cámara DSLR', 'https://via.placeholder.com/400x300?text=Cámara+DSLR', 'Electrónica', 699.99, 'Para fotógrafos profesionales'),
+  (8, 'Auriculares Noise-Cancelling', 'https://via.placeholder.com/400x300?text=Auriculares+NC', 'Electrónica', 249.99, 'Sumérgete en tu música favorita'),
+  (9, 'Chaqueta de Invierno', 'https://via.placeholder.com/400x300?text=Chaqueta+Invierno', 'Ropa', 129.99, 'Mantente abrigado con estilo'),
+  (10, 'Tablet Ultra', 'https://via.placeholder.com/400x300?text=Tablet+Ultra', 'Electrónica', 449.99, 'Perfecta para trabajo y entretenimiento');
