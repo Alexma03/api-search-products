@@ -1,0 +1,1 @@
+web: java -jar build/libs/api-search-products-0.0.1-SNAPSHOT.jar
