@@ -2,6 +2,7 @@ package com.alexmarcos.apisearchproducts.controller;
 
 import com.alexmarcos.apisearchproducts.dto.ProductDTO;
 import com.alexmarcos.apisearchproducts.service.ProductsService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
+@CrossOrigin(origins = "https://frontend-ecomerce-search.netlify.app")
 public class ProductsController {
 
     private final ProductsService productsService;
