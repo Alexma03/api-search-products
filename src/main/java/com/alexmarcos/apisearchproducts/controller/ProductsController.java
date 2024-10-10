@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-@CrossOrigin(origins = "https://frontend-ecomerce-search.netlify.app")
+@CrossOrigin(origins = {"https://frontend-ecomerce-search.netlify.app", "http://localhost:5173"})
 public class ProductsController {
 
     private final ProductsService productsService;
@@ -20,6 +20,11 @@ public class ProductsController {
     @GetMapping("/get-products")
     public List<ProductDTO> getProducts() {
         return productsService.getProducts();
+    }
+
+    @GetMapping("/get-product/{id}")
+    public ProductDTO getProduct(@PathVariable Integer id) {
+        return productsService.getProduct(id);
     }
 
     @PostMapping("/add-product")

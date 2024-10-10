@@ -7,6 +7,7 @@ import com.alexmarcos.apisearchproducts.repository.ProductsRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ProductsService {
@@ -26,5 +27,9 @@ public class ProductsService {
     public void addProduct(ProductDTO productDTO) {
         ProductModel productModel = productMapper.toModel(productDTO);
         productsRepository.save(productModel);
+    }
+
+    public ProductDTO getProduct(Integer id) {
+        return productMapper.toDTO(Objects.requireNonNull(productsRepository.findById(id).orElse(null)));
     }
 }
