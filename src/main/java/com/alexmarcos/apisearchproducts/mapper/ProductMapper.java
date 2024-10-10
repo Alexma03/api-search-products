@@ -29,7 +29,6 @@ public class ProductMapper {
 
     public ProductModel toModel(ProductDTO productDTO) {
         ProductModel productModel = new ProductModel();
-        productModel.setId(productDTO.getId());
         productModel.setNombre(productDTO.getNombre());
         productModel.setImg(productDTO.getImg());
         productModel.setCategoria(productDTO.getCategoria());

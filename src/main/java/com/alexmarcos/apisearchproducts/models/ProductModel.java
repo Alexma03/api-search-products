@@ -14,7 +14,8 @@ import java.math.BigDecimal;
 @Table(name = "producto", schema = "public")
 public class ProductModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "producto_seq")
+    @SequenceGenerator(name = "producto_seq", sequenceName = "producto_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Integer id;
 
