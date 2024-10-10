@@ -26,4 +26,15 @@ public class ProductMapper {
                 .map(this::toDTO)
                 .collect(Collectors.toList());
     }
+
+    public ProductModel toModel(ProductDTO productDTO) {
+        ProductModel productModel = new ProductModel();
+        productModel.setId(productDTO.getId());
+        productModel.setNombre(productDTO.getNombre());
+        productModel.setImg(productDTO.getImg());
+        productModel.setCategoria(productDTO.getCategoria());
+        productModel.setPrecio(productDTO.getPrecio());
+        productModel.setDescripcion(productDTO.getDescripcion());
+        return productModel;
+    }
 }
