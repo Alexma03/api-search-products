@@ -1,3 +1,4 @@
+// ProductsService.java
 package com.alexmarcos.apisearchproducts.service;
 
 import com.alexmarcos.apisearchproducts.dto.ProductDTO;
@@ -25,6 +26,9 @@ public class ProductsService {
     }
 
     public void addProduct(ProductDTO productDTO) {
+        if (productsRepository.findByNombre(productDTO.getNombre()).isPresent()) {
+            throw new IllegalArgumentException("Product with the same name already exists");
+        }
         ProductModel productModel = productMapper.toModel(productDTO);
         productsRepository.save(productModel);
     }
