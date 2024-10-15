@@ -33,7 +33,10 @@ public class ProductsService {
         productsRepository.save(productModel);
     }
 
-    public ProductDTO getProduct(Integer id) {
-        return productMapper.toDTO(Objects.requireNonNull(productsRepository.findById(id).orElse(null)));
+    public void deleteProduct(Integer id) {
+        if (Objects.isNull(id)) {
+            throw new IllegalArgumentException("Id cannot be null");
+        }
+        productsRepository.deleteById(id);
     }
 }

@@ -22,9 +22,9 @@ public class ProductsController {
         return productsService.getProducts();
     }
 
-    @GetMapping("/get-product/{id}")
-    public ProductDTO getProduct(@PathVariable Integer id) {
-        return productsService.getProduct(id);
+    @GetMapping("/delete-product/{id}")
+    public void getProduct(@PathVariable Integer id) {
+        productsService.deleteProduct(id);
     }
 
     @PostMapping("/add-product")
