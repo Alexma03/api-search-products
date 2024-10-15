@@ -27,7 +27,7 @@ public class ProductsController {
         productsService.deleteProduct(id);
     }
 
-    @PostMapping("/add-product")
+    @DeleteMapping("/add-product")
     public void addProduct(@RequestBody ProductDTO productDTO) {
         productsService.addProduct(productDTO);
     }
